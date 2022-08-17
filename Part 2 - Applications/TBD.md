@@ -1,4 +1,4 @@
-# Optimizing parameters of a MTK Standard Library code
+# Using JuliaSimOptimizer on MTK Standard Library code
 
 ## Heat Conduction Model
 

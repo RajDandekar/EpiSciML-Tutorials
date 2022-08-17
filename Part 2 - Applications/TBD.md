@@ -10,7 +10,7 @@ from dividing the total initial energy in the system by the sum of the heat capa
 
 ## Generating data from the model
 
-```@example
+```julia
 using ModelingToolkitStandardLibrary.Thermal, ModelingToolkit, OrdinaryDiffEq, Plots
 
 @parameters t
@@ -38,7 +38,7 @@ sol = solve(prob, Tsit5())
 
 ## Defining the inverse problem and generating a virtual population
 
-```@example
+```julia
 data = DataFrame(sol)
 
 trial = Trial(data, sys, tspan=(0.0, 5.0))
@@ -55,7 +55,7 @@ params = DataFrame(vp)
 
 ## Comparing parameter estimates with original values
 
-```@example
+```julia
 C1_estimate  = params[:, 1]
 C2_estimate = params[:, 2]
 

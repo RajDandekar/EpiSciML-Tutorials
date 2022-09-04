@@ -1,4 +1,4 @@
-# Integrating neural networks in compartment based models
+# Training Neural ODEs on epidemiology models in Julia
 
 
 ## Introduction

@@ -39,6 +39,7 @@ Infected = Infected - Recovered - Dead
 In this step, we define the α, β parameters of the SIR model and the neural network to capture the quarantine strength. We also define the UDE model as described in the procedure section at the beginning of this tutorial.
 
 ```julia
+rng = Random.default_rng()
 ann = Lux.Chain(Lux.Dense(3,10,relu),Lux.Dense(10,1))
 p1, st1 = Lux.setup(rng, ann)
 

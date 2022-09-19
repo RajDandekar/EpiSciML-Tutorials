@@ -24,7 +24,7 @@ using Random
 The data consists of infected and recovered case counts post the detection of the 500th infected case (which we will use as t= 0); for Italy. The data is obtained from the publicly maintained John Hopkins repository.
 
 ```julia
-vars = matread("/Users/sreedath/Desktop/Julia Computing 2022 Job/QSIR/Rise_Italy_Track.mat")
+vars = matread("Rise_Italy_Track.mat")
 Random.seed!(50)
 
 Infected = vars["Italy_Infected_All"]

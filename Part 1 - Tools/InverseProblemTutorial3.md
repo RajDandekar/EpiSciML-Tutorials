@@ -149,7 +149,7 @@ pl_trajectory = plot(ts, transpose(X̂), xlabel = "t", ylabel ="x(t), y(t)", col
 scatter!(solution.t, transpose(Xₙ), color = :black, label = ["Measurements" nothing])
 ```
 
-![](Figures/Tut3_Data_Estimate)
+![](Figures/Tut3_Data_Estimate.png)
 
 ```julia
 # Ideal unknown interactions of the predictor
@@ -160,7 +160,7 @@ Ŷ = U(X̂,p_trained,st)[1]
 pl_reconstruction = plot(ts, transpose(Ŷ), xlabel = "t", ylabel ="U(x,y)", color = :red, label = ["UDE Approximation" nothing])
 plot!(ts, transpose(Ȳ), color = :black, label = ["True Interaction" nothing])
 ```
-![](Figures/Tut3_UDE_Estimate)
+![](Figures/Tut3_UDE_Estimate.png)
 
 ```julia
 # Plot the error
@@ -169,7 +169,7 @@ pl_missing = plot(pl_reconstruction, pl_reconstruction_error, layout = (2,1))
 pl_overall = plot(pl_trajectory, pl_missing)
 ```
 
-![](Figures/Tut3_Error_Estimate)
+![](Figures/Tut3_Error_Estimate.png)
 
 ## Symbolic recovery of the missing terms
 We will use the DataDrivenDiffEq.jl package to run symbolic recovery on the trained/optimized neural network. Through this, we will uncover the symbolic form which the neural network represents.
@@ -216,7 +216,7 @@ plot!(estimate)
 
 ```
 
-![](Figures/Tut3_SINDY_Estimate)
+![](Figures/Tut3_SINDY_Estimate.png)
 
 ## Discussion
 We can see that the dynamics recovered through symbolic recovery match the original dynamics really well!

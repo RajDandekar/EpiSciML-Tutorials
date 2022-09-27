@@ -1,4 +1,4 @@
-# SciML Sensitivity + Symbolic recovery in Julia
+# SciML Sensitivity Optimizers + Symbolic recovery in Julia
 
 
 

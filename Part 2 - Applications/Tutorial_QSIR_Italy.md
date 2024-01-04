@@ -126,6 +126,18 @@ res2 = Optimization.solve(optprob2,Optim.BFGS(initial_stepnorm=0.01),
 
 data_pred = predict_adjoint(res2.u)
 p3n = res2.u
+
+S_NN_all_loss = data_pred[1, :]
+I_NN_all_loss = data_pred[2, :]
+R_NN_all_loss = data_pred[3, :]
+T_NN_all_loss = data_pred[4, :]
+
+
+Q_parameter = zeros(Float64, length(S_NN_all_loss), 1)
+
+for i = 1:length(S_NN_all_loss)
+  Q_parameter[i] = abs(ann([S_NN_all_loss[i];I_NN_all_loss[i]; R_NN_all_loss[i]], p3n.layer_1, st1)[1][1])
+end
 ```
 
 ## Plots
